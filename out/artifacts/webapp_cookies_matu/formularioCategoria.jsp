@@ -9,7 +9,7 @@
          import="java.util.*, org.elvis.webbappcookiematu.models.*" %>
 <%
     Categoria categorias = (Categoria) request.getAttribute("categorias");
-
+    Map<String, String> errores = (Map<String, String>) request.getAttribute("errores");
 %>
 <html>
 <head>
@@ -23,25 +23,29 @@
             <label for="nombre">Ingrese el nombre de categoria</label>
             <div>
                 <input type="hidden" name="id" value="<%=categorias.getIdCategoria()%>">
-                <input type="text" id="nombre" name="nombre" value="<%=categorias.getNombre() != null ? categorias.getNombre():""%>">
+                <input type="text" id="nombre" name="nombre" value="<%=categorias.getNombre() != null ? categorias.getNombre() : ""%>">
+                <div>
+                    <span><%= (errores != null && errores.get("nombre") != null) ? errores.get("nombre") : "" %></span>
+
+                </div>
             </div>
         </div>
 
         <div>
             <label for="descripcion">Ingrese la descripción</label>
             <div>
-                <input type="text" id="descripcion" name="descripcion" value="<%=categorias.getDescripcion() !=null ? categorias.getDescripcion():""%>">
+                <input type="text" id="descripcion" name="descripcion" value="<%=categorias.getDescripcion() != null ? categorias.getDescripcion() : ""%>">
+                <div>
+                    <span><%= (errores != null && errores.get("descripcion") != null) ? errores.get("descripcion") : "" %></span>
+                </div>
+
             </div>
         </div>
 
-
-
         <div>
-            <input type="submit" value="<%=(categorias.getIdCategoria()!= null && categorias.getIdCategoria()>0) ? "Editar" : "Crear"%>" >
-
+            <input type="submit" value="<%=(categorias.getIdCategoria() != null && categorias.getIdCategoria() > 0) ? "Editar" : "Crear"%>">
         </div>
     </form>
 </div>
-
 </body>
 </html>

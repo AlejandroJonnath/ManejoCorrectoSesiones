@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="compraventa@localhost" uuid="81f2140d-c9ca-48dc-9ccd-c61b49c987d0">
+    <data-source source="LOCAL" name="trabajoenclase@localhost" uuid="57765dd6-e4c4-4a39-aaed-1917e4a0a82e">
       <driver-ref>mariadb</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mariadb://localhost:3306/compraventa</jdbc-url>
+      <jdbc-url>jdbc:mariadb://localhost:3306/trabajoenclase</jdbc-url>
       <jdbc-additional-properties>
         <property name="com.intellij.clouds.kubernetes.db.host.port" />
         <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
