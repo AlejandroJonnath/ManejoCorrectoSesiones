@@ -43,4 +43,13 @@ public class CategoriaServiceJbdcImplement implements CategoriaService {
             throw new ServiceJdbcException(throwables.getMessage(), throwables.getCause());
         }
     }
+
+    @Override
+    public void eliminar(Long id) {
+        try {
+            repositoryJdbc.eliminar(id);
+        } catch (SQLException throwables) {
+            throw new ServiceJdbcException(throwables.getMessage(), throwables.getCause());
+        }
+    }
 }

@@ -77,7 +77,11 @@ public class CategoriaRepositoryJdbcImplemt implements Repository<Categoria> {
 
     @Override
     public void eliminar(Long id) throws SQLException {
-
+        String sql = "UPDATE categoria SET condicion = 0 WHERE idcategoria = ?";
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setLong(1, id);
+            stmt.executeUpdate();
+        }
     }
 
     private static Categoria getCategoria(ResultSet rs) throws SQLException {

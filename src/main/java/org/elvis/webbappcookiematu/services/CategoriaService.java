@@ -9,4 +9,5 @@ public interface CategoriaService {
     List<Categoria> listar();
     Optional<Categoria> porId(Long id);
     void guardar(Categoria categoria);
+    void eliminar(Long id);
 }
